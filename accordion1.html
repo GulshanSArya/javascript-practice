@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion</title>
+  <link rel="stylesheet" href="accordion.css">
+</head>
+<body>
+  <div id="wrapper">
+    <div id="accordion">
+      <div class="accord">
+        <h1>Accordion 1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint impedit possimus quod temporibus laborum non consectetur maxime facere repellat blanditiis libero recusandae tempore, eveniet expedita culpa voluptates commodi debitis totam.Dignissimos ipsum vel placeat? Distinctio, minima, beatae quibusdam perferendis voluptatibus fuga tempore tempora consectetur voluptates asperiores quam eveniet iusto, qui optio praesentium sed aperiam tenetur aspernatur. Eveniet possimus nihil voluptas.</p>
+      </div>
+      <div class="accord">
+        <h1>Accordion 2</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit ducimus blanditiis fuga, ea fugiat dolorem voluptatibus aspernatur cupiditate laboriosam sint. Quam necessitatibus officiis fuga aliquid vitae totam nam quos cum.Enim incidunt repellendus similique perferendis adipisci debitis dolorem, veritatis ea impedit doloribus ducimus quibusdam nihil facilis officiis maxime temporibus eaque pariatur ex quam, quas molestiae quasi! Facere laboriosam libero neque.</p>
+      </div>
+      <div class="accord">
+        <h1>Accordion 3</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit iste accusamus eligendi odit doloribus, quis ipsam cum! Ad aut quod blanditiis reprehenderit rem odio facilis ab quo, laborum, quos delectus?Voluptates libero fugit quibusdam, molestiae nihil perspiciatis consectetur iusto, inventore pariatur esse praesentium ipsa, quo qui commodi modi ad temporibus voluptate! Est eum quaerat quo. Pariatur inventore quam voluptatibus cumque?</p>
+      </div>
+      <div class="accord">
+        <h1>Accordion 4</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa ipsum iure qui harum sunt dolorem omnis, magnam inventore modi, nihil tempore repellendus officia aliquam corrupti ab? Architecto aut corrupti vitae.Laudantium illo vel minima explicabo repellendus nemo, ut sit esse deleniti quos doloremque necessitatibus veritatis delectus optio iusto veniam recusandae sapiente facilis nobis. Maxime eos nobis placeat animi quod tempore.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    // parentElement, children, nextElementSibling, previousElementSibling
+
+
+
+    let allH1 = document.querySelectorAll("h1")
+
+    allH1.forEach((h1) => {
+      h1.onclick = function(){
+        //FIRST METHOD
+        if(h1.nextElementSibling.style.display === 'block')
+          h1.nextElementSibling.style.display = "none"
+        else{
+          //check all para and close if any are open
+          let allP = document.querySelectorAll("p")
+          allP.forEach((para) => {
+            if(para.style.display === "block")
+              para.style.display = "none"
+          })
+
+          h1.nextElementSibling.style.display = "block"
+        }
+
+        //SECOND METHOD
+        if(h1.nextElementSibling.classList.contains("show")){
+          h1.nextElementSibling.style.display = "none"
+          h1.nextElementSibling.classList.remove("show")
+        }
+        else{
+
+          
+
+          h1.nextElementSibling.style.display = "block"
+          h1.nextElementSibling.classList.add("show")
+        }
+
+      }
+    })
+  </script>
+
+
+
+</body>
+</html> 

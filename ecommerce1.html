@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecommerce using fetch</title>
+  <link rel="stylesheet" href="ecommerce.css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="products"></div>
+  </div>
+  <script>
+    window.onload = start;
+
+    function start() {
+      fetch('https://dummyjson.com/products')
+        .then((response) => { return response.json() })
+        .then((result) => { showData(result.products) })
+    }
+
+    function showData(products) {
+      console.log(products)
+      products.forEach((product) => {
+        //Product Div, one for each product
+        let productWrapper = document.createElement("div");
+        productWrapper.setAttribute("class", "product")
+
+        //PhotoDiv
+        let photoWrapper = document.createElement("div");
+        photoWrapper.setAttribute("class", "product-photo")
+        productWrapper.appendChild(photoWrapper)
+
+        //Photo
+        let photo = document.createElement("img")
+        photo.setAttribute("src", product.thumbnail)
+        photoWrapper.appendChild(photo)
+
+        //ContentDiv
+        let contentWrapper = document.createElement("div");
+        contentWrapper.setAttribute("class", "product-content")
+        productWrapper.appendChild(contentWrapper)
+
+        //Title
+        let title = document.createElement("h1");
+        photoWrapper.setAttribute("class", "product-title")
+        title.innerHTML = product.title;
+        contentWrapper.appendChild(title)
+
+        //Description
+        let description = document.createElement("p");
+        description.setAttribute("class", "product-desc")
+        description.innerHTML = product.description;
+        contentWrapper.appendChild(description)
+
+        //Price
+        let price = document.createElement("p");
+        description.setAttribute("class", "product-price")
+        description.innerHTML = product.price;
+        contentWrapper.appendChild(price)
+
+
+        document.querySelector("#products").appendChild(productWrapper)
+
+      })
+    }
+  </script>
+</body>
+
+</html>

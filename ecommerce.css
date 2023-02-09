@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  background: #8360c3;
+  /* background: -webkit-linear-gradient(to right, #2ebf91, #8360c3); */
+  background: linear-gradient(to right, #2ebf91, #8360c3);
+  background: -webkit-radial-gradient(to right, #2ebf91, #8360c3 );
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+#products {
+  margin: 2rem auto;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 31%;
+  height: 400px;
+  margin: 1%;
+  background-color: #fff;
+  border-radius: 0.25rem;
+}
+
+.product-photo {
+  height: 280px;
+}
+.product-photo img {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  box-shadow: 1px 2px 7px 0 rgba(0,0,0,0.3);
+}
+
+.product-content {
+  padding: 1rem 0 0 1rem;
+}
+
+.product-content h1,
+.product-content p {
+  padding-bottom: 1rem;
+}
+
+.product-content h1 {
+  font-size: 1.5rem;
+}
+
+.product-content i {
+  padding-right: 0.5rem;
+}
