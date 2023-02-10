@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p" > WELCOME JAVASCRIPT </p>
+    <button id="btn"> Click Me</button>
+    <script>
+        let btn = document.querySelector("#btn")
+        btn.onclick= function (){
+            setInterval(function(){
+            
+            let para = document.querySelector("#p").innerHTML; 
+            let spll = para.split("");
+                //console.log(spll)
+                let spll1 = spll.pop();
+                //console.log(spll1)
+                spll.unshift(spll1);
+                document.querySelector("#p").innerHTML = spll.join("");
+                },800)
+            }
+    </script>
+   
+</body>
+</html>

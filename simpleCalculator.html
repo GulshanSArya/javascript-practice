@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" placeholder="Enter first number">
+  <input type="text" placeholder="Enter second number">
+  <select name="" id="">
+    <option value="">Select Operation</option>
+    <option value="+">Add</option>
+    <option value="-">Subtract</option>
+    <option value="*">Multiply</option>
+    <option value="/">Divide</option>
+    <option value="%">Modulus</option>
+  </select>
+  <p></p>
+
+  <script>
+    let input1 = document.querySelector("input:first-of-type")
+    let input2 = document.querySelector("input:last-of-type")
+    let select = document.querySelector("select")
+    let para = document.querySelector("p")
+
+
+    select.onchange = () => {
+      switch(select.value){
+        case "+":
+          para.innerHTML = Number(input1.value) + Number(input2.value);
+          break;
+      }
+      switch(select.value){
+        case "-":
+          para.innerHTML = Number(input1.value) - Number(input2.value);
+          break;
+      }
+      switch(select.value){
+        case "*":
+          para.innerHTML = Number(input1.value) * Number(input2.value);
+          break;
+      }
+      switch(select.value){
+        case "/":
+          para.innerHTML = Number(input1.value) / Number(input2.value);
+          break;
+      }
+      switch(select.value){
+        case "%":
+          para.innerHTML = Number(input1.value) % Number(input2.value);
+          break;
+      }
+    }
+  </script>
+</body>
+</body>
+</html>
